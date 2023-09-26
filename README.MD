@@ -1,8 +1,8 @@
 #### Запустить приложение:
 
-    docker-compose up --build
+docker-compose up --build
 
-#### По умолчанию стоит настройка TEST_MODE=1 (file .env.dev) для тестирования:
+ docker-compose exec web python manage.py migrate
 
     создает админа с кредами - login: admin, password: adminpassword
 
