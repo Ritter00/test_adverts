@@ -2,8 +2,6 @@
 
     docker-compose up --build
 
-#### По умолчанию стоит настройка TEST_MODE=1 (file .env.dev) для тестирования:
+Создать админа
 
-    создает админа с кредами - login: admin, password: adminpassword
-
-    так же создает экземпляры моделей City, Category, Advert
+    docker-compose exec web python manage.py createsuperuser

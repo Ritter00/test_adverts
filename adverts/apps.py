@@ -8,7 +8,3 @@ class AdvertsConfig(AppConfig):
     
     def ready(self):
         super().ready()
-        if os.environ.get('TEST_MODE'):
-            from .create import create_superuser, create_ad
-            create_superuser()
-            create_ad()

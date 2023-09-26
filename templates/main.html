@@ -38,6 +38,7 @@
 
     <main>
         <section>
+            <a href="{% url 'admin:index' %}">Админ панель</a>
             <h4><a href="{% url 'adverts:snippet_list' %}">Endpoint: все обьявления</a></h4>
             <ul>
                 {% for ad in objects %}
