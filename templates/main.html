@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Adverts</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Приложение для обьявлений</h1>
+    </header>
+
+    <main>
+        <section>
+            <h4><a href="{% url 'adverts:snippet_list' %}">Endpoint: все обьявления</a></h4>
+            <ul>
+                {% for ad in objects %}
+                    <li><a href="{% url 'adverts:snippet_detail' ad.pk %}">{{ad}} - просмотры({{ad.views}})</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; {% now 'Y' %} Adverts</p>
+    </footer>
+</body>
+</html>
