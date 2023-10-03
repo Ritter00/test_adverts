@@ -14,4 +14,13 @@ fi
 #python manage.py flush --no-input
 python manage.py migrate
 
+if [ "$TEST_ADMIN" = "True" ]
+then
+    python manage.py createsuperuser \
+            --noinput \
+            --username $ADMIN_NAME \
+            --email $ADMIN_EMAIL
+
+fi
+
 exec "$@"
